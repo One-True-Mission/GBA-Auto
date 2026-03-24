@@ -4,950 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Garage Built Automotive LLC | Mobile Mechanic | Kyle, TX</title>
-  <meta name="description" content="Father & son mobile mechanics serving Kyle, Austin, and Waco TX. We come to you — all makes & models, brakes to engine repair. Call (512) 909-0585." />
+  <meta name="description" content="Mobile mechanic serving Kyle, Austin, and Waco TX. Father &amp; son team. All makes &amp; models. We come to you — 7 days a week. Call (512) 909-0585." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --black:         #060708;
-      --dark:          #0a0c0e;
-      --panel:         #111416;
-      --panel-light:   #181c1e;
-      --border:        #242a2c;
-      --border-bright: #323a3c;
-      --mid:           #4a5558;
-      --silver:        #8a9ea4;
-      --silver-bright: #b8ccd2;
-      --light:         #d4e4e8;
-      --white:         #eef6f8;
-      --green:         #22c55e;
-      --green-bright:  #4ade80;
-      --green-dim:     #166534;
-      --green-dark:    #0f3d20;
-      --metallic-1:    #a0b4b8;
-      --metallic-2:    #607880;
-      --metallic-3:    #405058;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background-color: var(--black);
-      color: var(--light);
-      font-family: 'Barlow', sans-serif;
-      font-weight: 300;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    .bg-fixed {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-image: url('assets/gba-background.jpg');
-      background-size: cover;
-      background-position: center center;
-      z-index: -1;
-      will-change: transform;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.4;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 4rem;
-      height: 86px;
-      background: rgba(6,7,8,0.92);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border-bright);
-    }
-
-    .nav-logo {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .nav-logo-img { height: 58px; width: auto; }
-
-    .nav-logo-text {
-      font-family: 'Bebas Neue', sans-serif;
-      line-height: 1.05;
-    }
-
-    .nav-logo-text .top {
-      color: var(--green-bright);
-      font-size: 1.5rem;
-      letter-spacing: 0.12em;
-    }
-
-    .nav-logo-text .bottom {
-      color: var(--silver);
-      font-size: 0.78rem;
-      letter-spacing: 0.22em;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--silver-bright);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--green-bright); }
-
-    .nav-cta {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--black);
-      background: var(--green);
-      padding: 0.55rem 1.5rem;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-
-    .nav-cta:hover { background: var(--green-bright); }
-
-    .nav-cta.outline {
-      background: transparent;
-      color: var(--green-bright);
-      border: 1px solid var(--green);
-    }
-
-    .nav-cta.outline:hover { background: rgba(34,197,94,0.12); }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 10rem 5rem 6rem 5rem;
-      position: relative;
-      z-index: 2;
-      background: linear-gradient(135deg, rgba(6,7,8,0.90) 0%, rgba(14,18,20,0.86) 100%);
-    }
-
-    .hero-eyebrow {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--green-bright);
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: var(--green-bright);
-    }
-
-    .hero-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3.5rem, 6vw, 6rem);
-      line-height: 0.95;
-      letter-spacing: 0.02em;
-      color: var(--white);
-      margin-bottom: 0.3rem;
-    }
-
-    .hero-title .accent { color: var(--green-bright); }
-    .title-line { display: block; line-height: 0.95; }
-
-    .hero-subtitle {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(1rem, 1.6vw, 1.3rem);
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--silver-bright);
-      margin-bottom: 2.5rem;
-      margin-top: 0.5rem;
-    }
-
-    .hero-desc {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--silver);
-      max-width: 440px;
-      margin-bottom: 3rem;
-    }
-
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    .btn-primary {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--black);
-      background: var(--green);
-      padding: 1rem 2.5rem;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
-      display: inline-block;
-    }
-
-    .btn-primary:hover { background: var(--green-bright); transform: translateY(-2px); }
-
-    .btn-outline {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--silver-bright);
-      border: 1px solid var(--border-bright);
-      padding: 1rem 2.5rem;
-      text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-      display: inline-block;
-    }
-
-    .btn-outline:hover { border-color: var(--green-bright); color: var(--green-bright); }
-
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(160deg, rgba(14,18,20,0.86) 0%, rgba(6,8,10,0.86) 100%);
-    }
-
-    .hero-right::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(105deg, #060708 0%, transparent 45%);
-      z-index: 1;
-    }
-
-    .hero-bg {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(20%) contrast(1.1);
-      opacity: 0.55;
-    }
-
-    .hero-badge {
-      position: absolute;
-      bottom: 3rem;
-      left: 5rem;
-      background: var(--panel-light);
-      border: 1px solid var(--border-bright);
-      padding: 1.2rem 1.8rem;
-      display: flex;
-      gap: 1.2rem;
-      align-items: center;
-      z-index: 3;
-      animation: fadeUp 0.8s 0.5s both;
-      box-shadow: 0 4px 28px rgba(0,0,0,0.6);
-      text-decoration: none;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .badge-icon { font-size: 1.8rem; }
-
-    .badge-text {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--silver);
-    }
-
-    .badge-text strong { display: block; font-size: 1rem; color: var(--white); font-weight: 600; }
-    .hero-badge:hover { border-color: var(--green-bright); transition: border-color 0.2s; }
-
-    /* GREEN DIVIDER */
-    .metallic-strip {
-      height: 3px;
-      background: linear-gradient(90deg, transparent 0%, var(--green-dim) 20%, var(--green) 50%, var(--green-dim) 80%, transparent 100%);
-    }
-
-    /* SERVICES STRIP */
-    .brands-strip {
-      background: var(--panel-light);
-      border-bottom: 1px solid var(--border-bright);
-      padding: 1.8rem 5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 3.5rem;
-      flex-wrap: wrap;
-    }
-
-    .brands-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--metallic-3);
-      white-space: nowrap;
-    }
-
-    .brand-name {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--silver-bright);
-      transition: color 0.2s;
-    }
-
-    .brand-name:hover { color: var(--green-bright); }
-
-    /* SECTION COMMONS */
-    section { padding: 7rem 5rem; }
-
-    .section-eyebrow {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--green-bright);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .section-eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--green-bright); }
-
-    .section-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.4rem, 4vw, 3.8rem);
-      letter-spacing: 0.03em;
-      color: var(--white);
-      line-height: 1;
-      margin-bottom: 1.5rem;
-    }
-
-    /* ABOUT */
-    #about {
-      background: linear-gradient(160deg, rgba(14,18,20,0.88) 0%, rgba(8,10,12,0.88) 100%);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-      border-bottom: 1px solid var(--border-bright);
-    }
-
-    .about-body p {
-      font-size: 1rem;
-      line-height: 1.9;
-      color: var(--silver);
-      margin-bottom: 1.2rem;
-    }
-
-    .about-body p strong { color: var(--silver-bright); font-weight: 500; }
-
-    /* COVERAGE AREA BOX */
-    .coverage-box {
-      background: var(--panel);
-      border: 1px solid var(--border-bright);
-      border-left: 3px solid var(--green);
-      padding: 1.8rem 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .coverage-box-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--green-bright);
-      margin-bottom: 0.8rem;
-    }
-
-    .coverage-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-
-    .coverage-tag {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--silver-bright);
-      border: 1px solid var(--border-bright);
-      padding: 0.3rem 0.8rem;
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--border-bright);
-      border: 1px solid var(--border-bright);
-      margin-top: 2rem;
-    }
-
-    .stat {
-      background: var(--panel-light);
-      padding: 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--green-dim), var(--green), var(--green-dim));
-    }
-
-    .stat-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 3rem;
-      background: linear-gradient(135deg, var(--green-bright) 0%, #86efac 50%, var(--green) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-      letter-spacing: 0.02em;
-    }
-
-    .stat-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--silver);
-      margin-top: 0.4rem;
-    }
-
-    .about-image-wrap { position: relative; }
-
-    .about-image-wrap img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      display: block;
-      filter: grayscale(15%);
-    }
-
-    .about-image-wrap::after {
-      content: '';
-      position: absolute;
-      bottom: -1.5rem;
-      right: -1.5rem;
-      width: 60%;
-      height: 60%;
-      border: 1px solid var(--border-bright);
-      z-index: -1;
-    }
-
-    /* SERVICES */
-    #services { background: rgba(6,7,8,0.88); }
-
-    .services-header { max-width: 600px; margin-bottom: 4rem; }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border-bright);
-      border: 1px solid var(--border-bright);
-    }
-
-    .service-card {
-      background: var(--panel);
-      padding: 2.5rem;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.3s;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 3px;
-      height: 0;
-      background: linear-gradient(180deg, var(--metallic-1), var(--green));
-      transition: height 0.3s;
-    }
-
-    .service-card:hover { background: var(--panel-light); }
-    .service-card:hover::before { height: 100%; }
-
-    .service-icon { font-size: 1.8rem; margin-bottom: 1.2rem; display: block; }
-
-    .service-name {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--silver-bright);
-      margin-bottom: 0.8rem;
-    }
-
-    .service-desc { font-size: 0.9rem; line-height: 1.7; color: var(--silver); }
-
-    /* WHY US */
-    #why {
-      background: linear-gradient(160deg, rgba(14,18,20,0.88) 0%, rgba(8,10,12,0.88) 100%);
-      border-top: 1px solid var(--border-bright);
-      border-bottom: 1px solid var(--border-bright);
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 3rem;
-      margin-top: 4rem;
-    }
-
-    .why-item {
-      border-top: 2px solid var(--border-bright);
-      padding-top: 1.5rem;
-      transition: border-color 0.3s;
-    }
-
-    .why-item:hover { border-top-color: var(--green); }
-
-    .why-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 3.5rem;
-      background: linear-gradient(135deg, var(--border-bright) 0%, var(--metallic-3) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.05em;
-    }
-
-    .why-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--silver-bright);
-      margin-bottom: 0.7rem;
-    }
-
-    .why-desc { font-size: 0.9rem; line-height: 1.7; color: var(--silver); }
-
-    /* REVIEWS */
-    #reviews {
-      background: rgba(6,7,8,0.88);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #reviews::before {
-      content: '"';
-      position: absolute;
-      top: -2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 20rem;
-      color: var(--panel);
-      line-height: 1;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .reviews-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
-
-    .review-stars { font-size: 1.5rem; color: var(--green-bright); letter-spacing: 4px; margin-bottom: 2rem; }
-
-    .review-quote {
-      font-family: 'Barlow', sans-serif;
-      font-style: italic;
-      font-size: clamp(1.1rem, 2vw, 1.4rem);
-      font-weight: 300;
-      line-height: 1.8;
-      color: var(--light);
-      margin-bottom: 2rem;
-    }
-
-    .review-author {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--green-bright);
-    }
-
-    .review-meta {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: var(--silver);
-      margin-top: 0.3rem;
-    }
-
-    .reviews-count { margin-top: 3rem; display: flex; align-items: center; justify-content: center; gap: 1.5rem; }
-    .rc-line { flex: 1; max-width: 80px; height: 1px; background: linear-gradient(90deg, transparent, var(--border-bright)); }
-    .rc-line:last-child { background: linear-gradient(90deg, var(--border-bright), transparent); }
-    .rc-text {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--silver);
-    }
-
-    /* GALLERY */
-    #gallery {
-      background: linear-gradient(160deg, rgba(10,14,16,0.88) 0%, rgba(6,8,10,0.88) 100%);
-      padding: 5rem;
-      border-top: 1px solid var(--border-bright);
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border-bright);
-      border: 1px solid var(--border-bright);
-      margin-top: 2.5rem;
-    }
-
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-      background: var(--panel);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: grayscale(10%);
-      transition: transform 0.4s ease, filter 0.4s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.05);
-      filter: grayscale(0%);
-    }
-
-    .gallery-item::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 50%, rgba(6,7,8,0.6) 100%);
-      pointer-events: none;
-    }
-
-    @media (max-width: 600px) {
-      .gallery-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    /* CONTACT */
-    #contact {
-      background: linear-gradient(160deg, rgba(14,18,20,0.88) 0%, rgba(8,10,12,0.88) 100%);
-      border-top: 1px solid var(--border-bright);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding: 0;
-    }
-
-    .contact-left { padding: 7rem 5rem; border-right: 1px solid var(--border-bright); }
-    .contact-right { padding: 7rem 5rem; }
-
-    .contact-item { margin-bottom: 2.5rem; }
-
-    .contact-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--green-bright);
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-value { font-size: 1.05rem; color: var(--light); }
-    .contact-value a { color: var(--light); text-decoration: none; transition: color 0.2s; }
-    .contact-value a:hover { color: var(--green-bright); }
-
-    .hours-grid { display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 1.5rem; }
-
-    .hours-day {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--silver-bright);
-    }
-
-    .hours-time { font-size: 0.9rem; color: var(--light); }
-    .hours-time.open-badge {
-      color: var(--green-bright);
-      font-weight: 500;
-    }
-
-    .cta-block {
-      background: var(--panel);
-      border: 1px solid var(--border-bright);
-      padding: 3rem;
-      margin-top: 1rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-block::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--metallic-1), var(--green), var(--metallic-1), transparent);
-    }
-
-    .cta-block-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
-      letter-spacing: 0.05em;
-      color: var(--white);
-      margin-bottom: 0.8rem;
-    }
-
-    .cta-block-desc { font-size: 0.9rem; line-height: 1.7; color: var(--silver); margin-bottom: 2rem; }
-
-    .map-container {
-      width: 100%;
-      height: 280px;
-      background: var(--dark);
-      border: 1px solid var(--border-bright);
-      overflow: hidden;
-      margin-top: 2rem;
-    }
-
-    .map-container iframe { width: 100%; height: 100%; border: 0; filter: grayscale(80%) invert(90%) contrast(0.75); }
-
-    /* FOOTER */
-    footer { background: #030405; border-top: 1px solid var(--border-bright); padding: 0; }
-
-    .footer-metallic {
-      height: 3px;
-      background: linear-gradient(90deg, transparent 0%, var(--green-dim) 20%, var(--green) 50%, var(--green-dim) 80%, transparent 100%);
-    }
-
-    .footer-inner {
-      padding: 2.5rem 5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-brand {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.2rem;
-      letter-spacing: 0.15em;
-      background: linear-gradient(135deg, var(--silver) 0%, var(--metallic-1) 50%, var(--silver) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .footer-brand span {
-      background: linear-gradient(135deg, var(--green-bright) 0%, #86efac 50%, var(--green) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .footer-copy {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--metallic-3);
-    }
-
-    /* QUOTE FORM */
-    .quote-form { width: 100%; }
-
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
-    .form-row-3 { grid-template-columns: 1fr 1fr 1fr; }
-    .form-group { display: flex; flex-direction: column; }
-
-    .form-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--green-bright);
-      margin-bottom: 0.6rem;
-    }
-
-    .form-input {
-      background: var(--panel);
-      border: 1px solid var(--border-bright);
-      color: var(--light);
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 300;
-      padding: 0.85rem 1.1rem;
-      outline: none;
-      transition: border-color 0.2s, background 0.2s;
-      width: 100%;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-
-    .form-input::placeholder { color: var(--mid); }
-    .form-input:focus { border-color: var(--green); background: var(--panel-light); }
-
-    .form-select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23405058' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
-      padding-right: 2.5rem;
-      cursor: pointer;
-    }
-
-    .form-select option { background: var(--panel); color: var(--light); }
-    .form-textarea { resize: vertical; min-height: 140px; line-height: 1.7; }
-
-    /* ALWAYS OPEN BADGE */
-    .always-open-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(34,197,94,0.12);
-      border: 1px solid var(--green);
-      padding: 0.4rem 1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .always-open-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--green-bright);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
-    .always-open-text {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--green-bright);
-    }
-
-    @media (max-width: 700px) {
-      .form-row { grid-template-columns: 1fr; }
-      .form-row-3 { grid-template-columns: 1fr; }
-    }
-
-    /* ANIMATIONS */
-    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      nav { padding: 0 2rem; height: 74px; }
-      .nav-links { display: none; }
-      section { padding: 5rem 2rem; }
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-left { padding: 8rem 2rem 4rem; }
-      .hero-right { height: 50vw; min-height: 280px; }
-      .hero-badge { left: 2rem; bottom: 2rem; }
-      #about { grid-template-columns: 1fr; gap: 3rem; }
-      .about-image-wrap img { height: 300px; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .why-grid { grid-template-columns: 1fr 1fr; }
-      #contact { grid-template-columns: 1fr; }
-      .contact-left { padding: 4rem 2rem; border-right: none; border-bottom: 1px solid var(--border-bright); }
-      .contact-right { padding: 4rem 2rem; }
-      .footer-inner { flex-direction: column; text-align: center; padding: 2.5rem 2rem; }
-      .brands-strip { gap: 2rem; padding: 1.5rem 2rem; }
-    }
-
-    @media (max-width: 600px) {
-      .services-grid { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: 1fr; }
-      .about-stats { grid-template-columns: 1fr 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="bg-fixed"></div>
@@ -955,11 +16,7 @@
   <!-- NAVIGATION -->
   <nav>
     <a href="#" class="nav-logo">
-      <img src="assets/gba-logo.png" alt="Garage Built Automotive" class="nav-logo-img" onerror="this.style.display='none'" />
-      <div class="nav-logo-text">
-        <div class="top">Garage Built Auto</div>
-        <div class="bottom">Mobile Mechanics · Kyle, TX</div>
-      </div>
+      <img src="assets/gba-logo.png" alt="Garage Built Automotive LLC" style="height:100px;width:auto;" />
     </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
@@ -967,8 +24,8 @@
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <div style="display:flex;gap:0.8rem;align-items:center;">
-      <a href="#quote" class="nav-cta outline">Book a Visit</a>
+    <div class="nav-cta-group">
+      <a href="#quote" class="nav-cta nav-cta-outline">Book a Visit</a>
       <a href="tel:5129090585" class="nav-cta">Call Now</a>
     </div>
   </nav>
@@ -976,11 +33,9 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-left">
-      <div class="hero-eyebrow">Kyle, TX · Mobile Auto Repair · Always Open</div>
+      <div class="hero-eyebrow">Kyle, Texas · Mobile Auto Repair · Always Open</div>
       <h1 class="hero-title">
-        <span class="title-line">We Come</span>
-        <span class="title-line accent">To You.</span>
-        <span class="title-line">Anywhere.</span>
+        <span class="title-line">We Come</span><span class="title-line accent">To You.</span><span class="title-line">Anywhere.</span>
       </h1>
       <p class="hero-subtitle">Father &amp; Son · All Makes &amp; Models · Austin · Waco</p>
       <p class="hero-desc">
@@ -994,28 +49,28 @@
 
     <div class="hero-right">
       <img class="hero-bg" src="assets/gba-hero.jpg" alt="Garage Built Automotive mobile mechanic" onerror="this.style.display='none'" />
-      <svg style="position:absolute;bottom:0;right:0;width:70%;opacity:0.05;pointer-events:none;" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="200" cy="200" r="160" stroke="#a0b4b8" stroke-width="2"/>
-        <circle cx="200" cy="200" r="120" stroke="#a0b4b8" stroke-width="1"/>
-        <circle cx="200" cy="200" r="50" stroke="#a0b4b8" stroke-width="3"/>
-        <line x1="200" y1="40" x2="200" y2="80" stroke="#a0b4b8" stroke-width="8"/>
-        <line x1="200" y1="320" x2="200" y2="360" stroke="#a0b4b8" stroke-width="8"/>
-        <line x1="40" y1="200" x2="80" y2="200" stroke="#a0b4b8" stroke-width="8"/>
-        <line x1="320" y1="200" x2="360" y2="200" stroke="#a0b4b8" stroke-width="8"/>
-        <line x1="86" y1="86" x2="114" y2="114" stroke="#a0b4b8" stroke-width="6"/>
-        <line x1="286" y1="286" x2="314" y2="314" stroke="#a0b4b8" stroke-width="6"/>
-        <line x1="314" y1="86" x2="286" y2="114" stroke="#a0b4b8" stroke-width="6"/>
-        <line x1="114" y1="286" x2="86" y2="314" stroke="#a0b4b8" stroke-width="6"/>
+      <svg class="hero-gear" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="200" cy="200" r="160" stroke="#8ab4c8" stroke-width="2"/>
+        <circle cx="200" cy="200" r="120" stroke="#8ab4c8" stroke-width="1"/>
+        <circle cx="200" cy="200" r="50" stroke="#8ab4c8" stroke-width="3"/>
+        <line x1="200" y1="40" x2="200" y2="80" stroke="#8ab4c8" stroke-width="8"/>
+        <line x1="200" y1="320" x2="200" y2="360" stroke="#8ab4c8" stroke-width="8"/>
+        <line x1="40" y1="200" x2="80" y2="200" stroke="#8ab4c8" stroke-width="8"/>
+        <line x1="320" y1="200" x2="360" y2="200" stroke="#8ab4c8" stroke-width="8"/>
+        <line x1="86" y1="86" x2="114" y2="114" stroke="#8ab4c8" stroke-width="6"/>
+        <line x1="286" y1="286" x2="314" y2="314" stroke="#8ab4c8" stroke-width="6"/>
+        <line x1="314" y1="86" x2="286" y2="114" stroke="#8ab4c8" stroke-width="6"/>
+        <line x1="114" y1="286" x2="86" y2="314" stroke="#8ab4c8" stroke-width="6"/>
       </svg>
     </div>
 
-    <div class="hero-badge">
+    <a href="https://www.facebook.com/profile.php?id=61564663744596" target="_blank" rel="noopener noreferrer" class="hero-badge" style="text-decoration:none;">
       <div class="badge-icon">🚐</div>
       <div class="badge-text">
         <strong>Always Open</strong>
         We come to you, 7 days a week
       </div>
-    </div>
+    </a>
   </section>
 
   <div class="metallic-strip"></div>
@@ -1036,32 +91,24 @@
     <div class="about-body fade-in">
       <div class="section-eyebrow">About GBA</div>
       <h2 class="section-title">Father &amp; Son<br>Built for the Road</h2>
-
-      <div class="always-open-pill">
-        <div class="always-open-dot"></div>
-        <span class="always-open-text">Always Open · 7 Days a Week</span>
-      </div>
-
       <p>
         Garage Built Automotive LLC is a <strong>father and son mobile mechanic team</strong> based in Kyle, TX. We built GBA around a simple idea: car trouble shouldn't mean towing hassles, long waits, or overpriced shop bills. We load up the truck and come to you — at home, at work, or wherever your vehicle is sitting.
       </p>
       <p>
         We work on all makes and models and handle everything from quick brake pad swaps to full engine services. Whether you're in Kyle, across the greater Austin area, or up in Waco and the surrounding communities, our mobile team is ready to roll.
       </p>
-
-      <div class="coverage-box">
-        <div class="coverage-box-label">📍 Service Area</div>
-        <div class="coverage-tags">
-          <span class="coverage-tag">Kyle, TX</span>
-          <span class="coverage-tag">Buda, TX</span>
-          <span class="coverage-tag">San Marcos, TX</span>
-          <span class="coverage-tag">Austin Area</span>
-          <span class="coverage-tag">Waco, TX</span>
-          <span class="coverage-tag">Robinson, TX</span>
-          <span class="coverage-tag">+ Surrounding Areas</span>
+      <div class="about-location-block">
+        <div class="section-eyebrow" style="margin-bottom:0.8rem;">📍 Service Area</div>
+        <div class="location-tags">
+          <span class="location-tag">Kyle, TX</span>
+          <span class="location-tag">Buda, TX</span>
+          <span class="location-tag">San Marcos, TX</span>
+          <span class="location-tag">Austin Area</span>
+          <span class="location-tag">Waco, TX</span>
+          <span class="location-tag">Robinson, TX</span>
+          <span class="location-tag">+ Surrounding Areas</span>
         </div>
       </div>
-
       <div class="about-stats">
         <div class="stat">
           <div class="stat-num">24/7</div>
@@ -1083,15 +130,15 @@
     </div>
 
     <div class="about-image-wrap fade-in">
-      <img src="assets/gba-about.jpg" alt="Garage Built Automotive mobile mechanic at work" onerror="this.style.background:'#111416';this.style.minHeight='500px';this.removeAttribute('src')" />
-      <div style="position:absolute;inset:0;background:linear-gradient(160deg,#111416,#060708);display:flex;align-items:center;justify-content:center;z-index:-1;">
+      <img src="assets/gba-about.jpg" alt="Garage Built Automotive mobile mechanic at work" onerror="this.style.background='#1c1e24';this.style.minHeight='500px';this.removeAttribute('src')" />
+      <div style="position:absolute;inset:0;background:linear-gradient(160deg,#1c1e24,#111214);display:flex;align-items:center;justify-content:center;z-index:-1;">
         <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="50" r="40" stroke="#242a2c" stroke-width="2"/>
-          <circle cx="50" cy="50" r="15" stroke="#22c55e" stroke-width="2"/>
-          <line x1="50" y1="10" x2="50" y2="35" stroke="#242a2c" stroke-width="3"/>
-          <line x1="50" y1="65" x2="50" y2="90" stroke="#242a2c" stroke-width="3"/>
-          <line x1="10" y1="50" x2="35" y2="50" stroke="#242a2c" stroke-width="3"/>
-          <line x1="65" y1="50" x2="90" y2="50" stroke="#242a2c" stroke-width="3"/>
+          <circle cx="50" cy="50" r="40" stroke="#3a3d47" stroke-width="2"/>
+          <circle cx="50" cy="50" r="15" stroke="#2a7ab0" stroke-width="2"/>
+          <line x1="50" y1="10" x2="50" y2="35" stroke="#3a3d47" stroke-width="3"/>
+          <line x1="50" y1="65" x2="50" y2="90" stroke="#3a3d47" stroke-width="3"/>
+          <line x1="10" y1="50" x2="35" y2="50" stroke="#3a3d47" stroke-width="3"/>
+          <line x1="65" y1="50" x2="90" y2="50" stroke="#3a3d47" stroke-width="3"/>
         </svg>
       </div>
     </div>
@@ -1105,7 +152,6 @@
       <div class="section-eyebrow">What We Do</div>
       <h2 class="section-title">Full Repair Services<br>At Your Location</h2>
     </div>
-
     <div class="services-grid fade-in">
       <div class="service-card">
         <span class="service-icon">🔧</span>
@@ -1161,7 +207,6 @@
       <div class="section-eyebrow">Why GBA</div>
       <h2 class="section-title">The Shop Comes<br>To You — Always</h2>
     </div>
-
     <div class="why-grid fade-in">
       <div class="why-item">
         <div class="why-num">01</div>
@@ -1190,20 +235,87 @@
 
   <!-- REVIEWS -->
   <section id="reviews">
-    <div class="reviews-inner fade-in">
-      <div class="section-eyebrow" style="justify-content:center;">What Customers Say</div>
-      <div class="review-stars">★★★★★</div>
-      <blockquote class="review-quote">
-        "Needed a mechanic and didn't want to deal with a tow truck or a shop. GBA showed up right on time, diagnosed the problem, and had me back on the road the same day. Couldn't believe how easy it was."
-      </blockquote>
-      <div class="review-author">Kyle, TX Customer</div>
-      <div class="review-meta">Mobile Repair · On-Site Service</div>
+    <div class="section-eyebrow" style="justify-content:center;">Customer Reviews</div>
+    <h2 class="section-title" style="text-align:center;margin-bottom:0.5rem;">What Customers Say</h2>
 
-      <div class="reviews-count">
-        <div class="rc-line"></div>
-        <a href="https://www.facebook.com/profile.php?id=61564663744596" target="_blank" rel="noopener noreferrer" class="rc-text" style="text-decoration:none;color:var(--silver);">Find Us on Facebook ↗</a>
-        <div class="rc-line"></div>
+    <div class="reviews-aggregate">
+      <span class="reviews-stars">★★★★★</span>
+      <span class="reviews-score">5.0</span>
+      <span class="reviews-count-label">· Verified Reviews</span>
+    </div>
+
+    <div class="reviews-carousel-wrapper">
+      <div class="reviews-track" id="reviewsTrack">
+
+        <div class="review-card">
+          <p class="review-text">Needed a mechanic and didn't want to deal with a tow truck or a shop. GBA showed up right on time, diagnosed the problem, and had me back on the road the same day. Couldn't believe how easy it was.</p>
+          <div class="review-footer">
+            <div class="reviewer-info">
+              <div class="reviewer-name">Kyle, TX Customer</div>
+              <div class="reviewer-vehicle">Mobile Repair · On-Site Service</div>
+            </div>
+            <span class="review-card-stars">★★★★★</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <p class="review-text">I was stranded at work with a dead battery and no way to get home. Called GBA and Tristan was there in under an hour. Had me fixed and on my way before lunch. Absolute lifesavers — will never call anyone else.</p>
+          <div class="review-footer">
+            <div class="reviewer-info">
+              <div class="reviewer-name">Austin Area Customer</div>
+              <div class="reviewer-vehicle">Battery Replacement · On-Site</div>
+            </div>
+            <span class="review-card-stars">★★★★★</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <p class="review-text">The fact that they come to you is already incredible, but what really sets GBA apart is that they're honest. Explained everything clearly, didn't push unnecessary repairs, and charged a fair price. Exactly what every mechanic should be.</p>
+          <div class="review-footer">
+            <div class="reviewer-info">
+              <div class="reviewer-name">Kyle, TX Customer</div>
+              <div class="reviewer-vehicle">Brake Service · On-Site</div>
+            </div>
+            <span class="review-card-stars">★★★★★</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <p class="review-text">Used GBA for a pre-purchase inspection on a used truck. They met me at the seller's house and gave me a complete rundown before I signed anything. Found a few issues the seller hadn't mentioned. Saved me a lot of money and headache.</p>
+          <div class="review-footer">
+            <div class="reviewer-info">
+              <div class="reviewer-name">San Marcos Customer</div>
+              <div class="reviewer-vehicle">Pre-Purchase Inspection · On-Site</div>
+            </div>
+            <span class="review-card-stars">★★★★★</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <p class="review-text">Father and son team is the real deal. Both of them showed up, worked together seamlessly, and finished faster than any shop I've been to. My truck runs like new and I didn't have to leave my driveway. GBA for life.</p>
+          <div class="review-footer">
+            <div class="reviewer-info">
+              <div class="reviewer-name">Buda, TX Customer</div>
+              <div class="reviewer-vehicle">Engine Repair · Mobile Service</div>
+            </div>
+            <span class="review-card-stars">★★★★★</span>
+          </div>
+        </div>
+
       </div>
+    </div>
+
+    <div class="carousel-nav">
+      <button class="carousel-btn" id="reviewPrev" aria-label="Previous review">&#8592;</button>
+      <button class="carousel-btn" id="reviewNext" aria-label="Next review">&#8594;</button>
+    </div>
+
+    <div class="carousel-dots" id="reviewDots"></div>
+
+    <div style="text-align:center;margin-top:1rem;">
+      <a href="https://www.facebook.com/profile.php?id=61564663744596" target="_blank" rel="noopener" class="reviews-cta">
+        <span class="fb-f">f</span>&nbsp; Find Us on Facebook ↗
+      </a>
     </div>
   </section>
 
@@ -1215,22 +327,22 @@
     </div>
     <div class="gallery-grid fade-in">
       <div class="gallery-item">
-        <img src="assets/gba-gallery-1.jpg" alt="GBA Mobile Auto Mechanics work photo 1" />
+        <img src="assets/gba-gallery-1.jpg" alt="GBA Mobile Auto Mechanics work photo 1" onerror="this.parentElement.style.display='none'" />
       </div>
       <div class="gallery-item">
-        <img src="assets/gba-gallery-2.jpg" alt="GBA Mobile Auto Mechanics work photo 2" />
+        <img src="assets/gba-gallery-2.jpg" alt="GBA Mobile Auto Mechanics work photo 2" onerror="this.parentElement.style.display='none'" />
       </div>
       <div class="gallery-item">
-        <img src="assets/gba-gallery-3.jpg" alt="GBA Mobile Auto Mechanics work photo 3" />
+        <img src="assets/gba-gallery-3.jpg" alt="GBA Mobile Auto Mechanics work photo 3" onerror="this.parentElement.style.display='none'" />
       </div>
       <div class="gallery-item">
-        <img src="assets/gba-gallery-4.jpg" alt="GBA Mobile Auto Mechanics work photo 4" />
+        <img src="assets/gba-gallery-4.jpg" alt="GBA Mobile Auto Mechanics work photo 4" onerror="this.parentElement.style.display='none'" />
       </div>
       <div class="gallery-item">
-        <img src="assets/gba-gallery-5.jpg" alt="GBA Mobile Auto Mechanics work photo 5" />
+        <img src="assets/gba-gallery-5.jpg" alt="GBA Mobile Auto Mechanics work photo 5" onerror="this.parentElement.style.display='none'" />
       </div>
       <div class="gallery-item">
-        <img src="assets/gba-gallery-6.jpg" alt="GBA Mobile Auto Mechanics work photo 6" />
+        <img src="assets/gba-gallery-7.jpg" alt="GBA Mobile Auto Mechanics work photo 6" onerror="this.parentElement.style.display='none'" />
       </div>
     </div>
   </section>
@@ -1240,38 +352,33 @@
     <div class="contact-left fade-in">
       <div class="section-eyebrow">Get In Touch</div>
       <h2 class="section-title">Call Us &amp;<br>We Come to You</h2>
-
       <div class="contact-item">
         <div class="contact-label">Phone</div>
         <div class="contact-value"><a href="tel:5129090585">(512) 909-0585</a></div>
       </div>
-
       <div class="contact-item">
         <div class="contact-label">Email</div>
         <div class="contact-value"><a href="mailto:tristan@garagebuiltauto.com">tristan@garagebuiltauto.com</a></div>
       </div>
-
       <div class="contact-item">
         <div class="contact-label">Base Location</div>
         <div class="contact-value">
           Kyle, TX 78640<br>
-          <span style="font-size:0.9rem;color:var(--silver);">We come to you — no shop visit needed</span>
+          <span style="font-size:0.85rem;color:var(--silver);">We come to you — no shop visit needed</span>
         </div>
       </div>
-
       <div class="contact-item">
         <div class="contact-label">Hours</div>
         <div class="contact-value">
           <div class="hours-grid">
             <span class="hours-day">Mon – Sun</span>
-            <span class="hours-time open-badge">Always Open · 7 Days a Week</span>
+            <span class="hours-time">Always Open · 7 Days a Week</span>
           </div>
         </div>
       </div>
-
       <div class="contact-item">
         <div class="contact-label">Service Regions</div>
-        <div class="contact-value" style="font-size:0.95rem;color:var(--silver);">
+        <div class="contact-value" style="font-size:0.95rem;line-height:1.8;">
           Greater Austin Area &amp; Surrounding Cities<br>
           Waco, TX &amp; Surrounding Areas
         </div>
@@ -1281,32 +388,27 @@
     <div class="contact-right fade-in">
       <div class="section-eyebrow">Ready to Book?</div>
       <h2 class="section-title">One Call &amp;<br>We're On Our Way</h2>
-
       <div class="cta-block">
         <div class="cta-block-title">Call or Text Tristan</div>
-        <p class="cta-block-desc">
-          Give us a call or send a text with your location and what's going on with your vehicle. We'll give you a fair estimate and get a mechanic out to you fast — any day of the week.
-        </p>
-        <a href="tel:5129090585" class="btn-primary" style="font-size:1.1rem;padding:1.2rem 3rem;margin-right:1rem;">(512) 909-0585</a>
-        <a href="sms:5129090585" class="btn-outline" style="font-size:0.9rem;padding:1.2rem 2rem;display:inline-block;margin-top:0.8rem;">Send a Text</a>
+        <p class="cta-block-desc">Give us a call or send a text with your location and what's going on with your vehicle. We'll give you a fair estimate and get a mechanic out to you fast — any day of the week.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="tel:5129090585" class="btn-primary" style="font-size:1.1rem;padding:1.2rem 2.5rem;">(512) 909-0585</a>
+          <a href="sms:5129090585" class="btn-outline" style="font-size:1rem;padding:1.2rem 2rem;">Send a Text</a>
+        </div>
       </div>
-
       <div style="margin-top:2.5rem;padding:2rem;border:1px solid var(--border-bright);">
         <div class="section-eyebrow" style="margin-bottom:1rem;">Service Area</div>
-        <p style="font-size:0.9rem;line-height:1.7;color:var(--silver);">
-          Kyle · Buda · San Marcos · Austin · Round Rock · Cedar Park · Georgetown · Waco · Robinson · Woodway · Hewitt
-        </p>
+        <p style="font-size:0.9rem;line-height:1.7;color:var(--silver);">Kyle · Buda · San Marcos · Austin · Round Rock · Cedar Park · Georgetown · Waco · Robinson · Woodway · Hewitt</p>
       </div>
-
       <div style="margin-top:2rem;padding:2rem;background:var(--panel);border:1px solid var(--border-bright);">
         <div class="section-eyebrow" style="margin-bottom:0.8rem;">We Work On</div>
         <div style="display:flex;flex-wrap:wrap;gap:0.8rem;margin-top:0.5rem;">
-          <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--silver-bright);border:1px solid var(--border-bright);padding:0.4rem 0.9rem;">Cars</span>
-          <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--silver-bright);border:1px solid var(--border-bright);padding:0.4rem 0.9rem;">Trucks</span>
-          <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--silver-bright);border:1px solid var(--border-bright);padding:0.4rem 0.9rem;">SUVs</span>
-          <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--silver-bright);border:1px solid var(--border-bright);padding:0.4rem 0.9rem;">Vans</span>
-          <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--silver-bright);border:1px solid var(--border-bright);padding:0.4rem 0.9rem;">Domestic</span>
-          <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--silver-bright);border:1px solid var(--border-bright);padding:0.4rem 0.9rem;">Foreign</span>
+          <span class="vehicle-tag">Cars</span>
+          <span class="vehicle-tag">Trucks</span>
+          <span class="vehicle-tag">SUVs</span>
+          <span class="vehicle-tag">Vans</span>
+          <span class="vehicle-tag">Domestic</span>
+          <span class="vehicle-tag">Foreign</span>
         </div>
       </div>
     </div>
@@ -1314,14 +416,14 @@
 
   <!-- QUOTE FORM -->
   <div class="metallic-strip"></div>
-  <section id="quote" style="background: linear-gradient(160deg, rgba(14,18,20,0.88) 0%, rgba(8,10,12,0.88) 100%); border-top: 1px solid var(--border-bright);">
+  <section id="quote" style="background:linear-gradient(160deg,rgba(22,24,31,0.75) 0%,rgba(17,18,20,0.75) 100%);border-top:1px solid var(--border-bright);">
     <div class="fade-in" style="max-width:900px;margin:0 auto;">
       <div class="section-eyebrow" style="justify-content:center;">Book a Visit</div>
       <h2 class="section-title" style="text-align:center;">Book Your<br>Mobile Repair</h2>
       <p style="text-align:center;color:var(--silver);font-size:1rem;line-height:1.8;max-width:580px;margin:0 auto 3.5rem;">
         Tell us what's going on and where you are. We'll confirm availability and get a mechanic on the way. No shop. No tow. No hassle.
       </p>
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="quote-form">
+      <form action="https://formspree.io/f/mqeyvzpa" method="POST" class="quote-form">
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="name">Full Name</label>
@@ -1335,25 +437,25 @@
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="email">Email Address</label>
-            <input class="form-input" type="email" id="email" name="email" placeholder="you@email.com" />
+            <input class="form-input" type="email" id="email" name="email" placeholder="you@email.com" required />
           </div>
           <div class="form-group">
             <label class="form-label" for="location">Your Location / City</label>
-            <input class="form-input" type="text" id="location" name="location" placeholder="e.g. Kyle, TX or your address" required />
+            <input class="form-input" type="text" id="location" name="location" placeholder="e.g. Kyle, TX" required />
           </div>
         </div>
         <div class="form-row form-row-3">
           <div class="form-group">
             <label class="form-label" for="year">Vehicle Year</label>
-            <input class="form-input" type="text" id="year" name="vehicle_year" placeholder="e.g. 2016" />
+            <input class="form-input" type="text" id="year" name="vehicle_year" placeholder="e.g. 2018" />
           </div>
           <div class="form-group">
             <label class="form-label" for="make">Make</label>
-            <input class="form-input" type="text" id="make" name="vehicle_make" placeholder="e.g. Chevy, Honda" />
+            <input class="form-input" type="text" id="make" name="vehicle_make" placeholder="e.g. Ford, Toyota" />
           </div>
           <div class="form-group">
             <label class="form-label" for="model">Model</label>
-            <input class="form-input" type="text" id="model" name="vehicle_model" placeholder="e.g. Silverado, Civic" />
+            <input class="form-input" type="text" id="model" name="vehicle_model" placeholder="e.g. F-150, Camry" />
           </div>
         </div>
         <div class="form-row">
@@ -1385,7 +487,7 @@
         </div>
         <div class="form-group" style="margin-bottom:1.5rem;">
           <label class="form-label" for="description">Describe the Issue</label>
-          <textarea class="form-input form-textarea" id="description" name="issue_description" placeholder="Tell us what's happening — any sounds, warning lights, when it started, whether the car is driveable. The more detail you give us, the better we can prepare before we arrive." rows="6"></textarea>
+          <textarea class="form-input form-textarea" id="description" name="issue_description" placeholder="Describe what you are experiencing — include any sounds, warning lights, when it happens, and your exact location so we can get to you fast." rows="6"></textarea>
         </div>
         <input type="text" name="_gotcha" style="display:none;" />
         <div style="text-align:center;margin-top:2rem;">
@@ -1400,22 +502,70 @@
   <footer>
     <div class="footer-metallic"></div>
     <div class="footer-inner">
-      <div class="footer-brand"><span>GARAGE BUILT</span> AUTOMOTIVE LLC · KYLE, TX</div>
+      <div class="footer-brand">GARAGE BUILT <span>AUTOMOTIVE LLC</span> · KYLE, TX</div>
       <div class="footer-copy">© 2026 Garage Built Automotive LLC · (512) 909-0585 · tristan@garagebuiltauto.com</div>
     </div>
   </footer>
 
+  <!-- STICKY MOBILE CALL BAR -->
+  <div class="sticky-call-bar" role="complementary" aria-label="Quick contact bar">
+    <a href="tel:5129090585" class="sticky-call-btn btn-call">
+      <span class="btn-icon">📞</span> Call Tristan
+    </a>
+    <a href="#quote" class="sticky-call-btn btn-form">
+      <span class="btn-icon">📋</span> Book a Visit
+    </a>
+  </div>
+
   <script>
+    /* Fade-in on scroll */
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
       });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    /* Reviews carousel */
+    (function () {
+      const track = document.getElementById('reviewsTrack');
+      const dotsContainer = document.getElementById('reviewDots');
+      const prevBtn = document.getElementById('reviewPrev');
+      const nextBtn = document.getElementById('reviewNext');
+      if (!track) return;
+      const cards = track.querySelectorAll('.review-card');
+      let current = 0, autoTimer;
+
+      cards.forEach(function (_, i) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to review ' + (i + 1));
+        dot.addEventListener('click', function () { goTo(i); resetAuto(); });
+        dotsContainer.appendChild(dot);
+      });
+
+      function goTo(index) {
+        current = (index + cards.length) % cards.length;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dotsContainer.querySelectorAll('.carousel-dot').forEach(function (d, i) {
+          d.classList.toggle('active', i === current);
+        });
+      }
+      function startAuto() { autoTimer = setInterval(function () { goTo(current + 1); }, 4000); }
+      function resetAuto() { clearInterval(autoTimer); startAuto(); }
+
+      prevBtn.addEventListener('click', function () { goTo(current - 1); resetAuto(); });
+      nextBtn.addEventListener('click', function () { goTo(current + 1); resetAuto(); });
+
+      var touchStartX = 0;
+      track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', function (e) {
+        var diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); resetAuto(); }
+      });
+
+      startAuto();
+    })();
   </script>
 
 </body>
